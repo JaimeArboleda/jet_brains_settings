@@ -1,41 +1,53 @@
-""" Add source vimrc
-source C:/Users/jaime/.vimrc
+" General VIM settings
+set relativenumber
+set showcmd
+set showmode
+set number
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set clipboard+=unnamed
+"" Move lines up and down in normal and visual mode
+"Move the unnamed register to a, b, c or d registers, for further operations. Also paste those registers.
+" Create Blank Newlines and stay in Normal mode
+nnoremap <silent> zj o<Esc>k
+nnoremap <silent> zk O<Esc>j
+" Easy move to four directions with control
+inoremap <c-k> <up>
+inoremap <c-j> <down>
+inoremap <c-h> <left>
+inoremap <c-l> <right>
+""" The Leader Key
+let mapleader=" "
+inoremap jk <Esc>
+vnoremap < <gv
+vnoremap > >gv
+
+" IdeaVIM settings
 set idearefactormode=keep
 set visualbell
 set noerrorbells
 set noideadelaymacro
 set clipboard+=ideaput
-""" Reload ideavimrv and edit vimrc and ideavimrc
-nnoremap <leader>vr :action IdeaVim.ReloadVimRc.reload<CR>
-nnoremap <leader>vi :e C:/Users/jaime/.ideavimrc<CR>
-nnoremap <leader>vv :e C:/Users/jaime/.vimrc<CR>
-""" Open Terminal in Path of current file
-nnoremap <leader>ot :action Terminal.OpenInTerminal<CR>
+
+nnoremap <leader>v :action IdeaVim.ReloadVimRc.reload<CR>
+nnoremap <leader>s :action SplitVertically<CR>
+nnoremap <leader>S :action Unsplit<CR>
+nnoremap <leader>qq :action CloseContent<CR>
+nnoremap <leader>QQ :action ReopenClosedTab<CR>
+nnoremap <leader>ww <c-w>w
+
+
 """ Navigation and move between tabs and windows
-nnoremap <leader>sv :action SplitVertically<CR>
-nnoremap <leader>sh :action SplitHorizontally<CR>
-nnoremap <leader>su :action Unsplit<CR>
-nnoremap <leader>sU :action UnsplitAll<CR>
-nnoremap <leader>tp :action PreviousTab<CR>
-nnoremap <leader>tn :action NextTab<CR>
-nnoremap <TAB> : action NextTab<CR>
-nnoremap <leader>tq :action CloseContent<CR>
-nnoremap <leader>to :action ReopenClosedTab<CR>
-nnoremap <leader>wh <c-w>h
-nnoremap <leader>wl <c-w>l
-nnoremap <leader>wj <c-w>j
-nnoremap <leader>wk <c-w>k
-nnoremap <leader>wq :action HideAllWindows<CR>
 """ Gotos
 nnoremap <leader>gE :action GotoPreviousError<CR>
 nnoremap <leader>ge :action GotoNextError<CR>
 nnoremap <leader>gi :action GotoImplementation<CR>
-nnoremap <leader>gp :action GotToSuperMethod<CR>
 nnoremap <leader>gt :action GotoTest<CR>
 nnoremap <leader>gb :action Back<CR>
+nnoremap <leader>gB :action Forward<CR>
 nnoremap <leader>gf :action GotoFile<CR>
-vnoremap <leader>ga :action GotoAction<CR>
-nnoremap <leader>ga :action GotoAction<CR>
 nnoremap <leader>gc :action JumpToLastChange<CR>
 """ Bookmarks
 nnoremap <leader>bt :<C-u>action ToggleBookmark<CR>
@@ -75,28 +87,30 @@ nnoremap <leader>it :action RerunTests<CR>
 nnoremap <leader>iT :action RerunFailedTests<CR>
 nnoremap <leader>dr :action Debug<CR>
 nnoremap <leader>db :action ToggleLineBreakpoint<CR>
-""" Others
-nnoremap <leader>yp :action CopyAbsolutePath<CR>
+
 """ Plugins
 Plug 'easymotion/vim-easymotion'
 map , <Plug>(easymotion-prefix)
+map ,f <Plug>(easymotion-bd-f)
+map ,t <Plug>(easymotion-bd-t)
+map ,w <Plug>(easymotion-bd-w)
+map ,W <Plug>(easymotion-bd-W)
+map ,e <Plug>(easymotion-bd-e)
+map ,E <Plug>(easymotion-bd-E)
+map ,l <Plug>(easymotion-bd-jk)
+map ,s <Plug>(easymotion-bd-f2)
+map ,S <Plug>(easymotion-bd-t2)
+
 Plug 'tpope/vim-surround'
 """ It does not work very well, only use with visual model and A-n
+
 set multiple-cursors
 Plug 'terryma/vim-multiple-cursors'
-let g:multi_cursor_start_word_key      = ',cs'
-let g:multi_cursor_select_all_word_key = ',ca'
-let g:multi_cursor_next_key            = ',cs'
-let g:multi_cursor_prev_key            = ',cr'
-let g:multi_cursor_skip_key            = ',ce'
-nmap ,cs <Plug>NextWholeOccurrence
-xmap ,cs <Plug>NextWholeOccurrence
-nmap ,ce <Plug>SkipOccurrence
-xmap ,ce <Plug>SkipOccurrence
-nmap ,cr <Plug>RemoveOccurrence
-xmap ,cr <Plug>RemoveOccurrence
-nmap ,ca <Plug>AllWholeOccurrences
-xmap ,ca <Plug>AllWholeOccurrences
+nmap ,ma <Plug>NextWholeOccurrence
+xmap ,ma <Plug>NextWholeOccurrence
+nmap ,ms <Plug>SkipOccurrence
+xmap ,ms <Plug>SkipOccurrence
+
 Plug 'tpope/vim-commentary'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'machakann/vim-highlightedyank'
