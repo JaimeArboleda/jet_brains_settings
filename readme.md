@@ -1,18 +1,11 @@
 # My IDE configuration
+(Work in progress, to help me with learning all keybindings)
 
 This project holds my configuration for PyCharm with IdeaVIM.
 
 I use Hotkeys to remap CapsLock to Control and to use the keyboard with US layout and having accents with Alt Right (I am from Spain). To achieve it, copy `keyboard.ahk` to `C:\Users\jaime\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` so that is executed at startup.
 
-The .ideavimrc file in this repository contains 
-
 I use a VIM emulator, Ideavim. I prefer this over pure neovim or neovim integration because I feel like it is more stable (although it has fewer features). Anyway, some of the more advanced features of VIM do not make too much sense in the context of a powerful IDE and its own features. At least, in my opinion. 
-
-After a couple of years of using VIM emulation, I have realized that I am more productive using key shortcuts and VIM in general when I am just editing code or navigating in my codebase. In those cases, the task at hand is often straightforward and I value the speed that VIM provides. However, when I am doing a other tasks, like dealing with git, debugging or running commands in the terminal, I don't care if I am using the mouse (and it makes the configuration and the amount of memory needed easier as I don't need to deal with so many shortcuts and keybindings).
-
-Other example where I don't find very useful to use shortcuts is for resizing windows. I just use the mouse for that. I use only vertical splits horizontal splits tend to be too small for me). And no more than two splits. So having a command to switch between splits is the only useful one. 
-
-So my commands are divided broadly in two categories: navigation and editing. 
 
 Plugins that I use besides IdeaVIM: 
 * Rust
@@ -22,6 +15,8 @@ Plugins that I use besides IdeaVIM:
 In the case of the formatting plugins, I have set up the format on save, so I don't need to learn keybindings for that. 
 
 Tip: `:actionlist` show all actions available in Intellij.
+
+`<c-m>` is used for showing the context menu (like a right click in the mouse). It's very useful in lots of situations (for example, in the file explorer, for deleting or creating a new file...).
 
 ## Basic VIM 
 
@@ -169,6 +164,14 @@ I don't use vim marks; I prefer IDE bookmarks because they persist across sessio
 * `'` - jump to the line of the last cursor position
 
 ### Insert Mode
+* `<C-o>` - execute a single normal mode command
+* `<C-r>` - insert the contents of a register (`"` for the unnamed register)
+
+### Macros
+* `q{a-z}` - start recording a macro
+* `q{a-z}` - stop recording a macro
+* `@{a-z}` - execute a macro
+
 
 ### Visual Mode
 * `v` - enter visual mode
@@ -208,8 +211,9 @@ I don't use vim marks; I prefer IDE bookmarks because they persist across sessio
 
 `<C-n>` - Focus on NerdTree
 `<C-t>` - Focus on Terminal
-`Esc` - Focus on Editor (tip: Alt right + space sends a Escape key)
+`Esc` - Focus on Editor (tip: Alt right + space sends an Escape key)
 `<C-h>` - Hide windows (terminal, nerdtree...)
+`<C-z>` - Toggle distraction free mode display 
 
 ### NerdTree
 
@@ -248,3 +252,9 @@ It starts from a visual selection of a word, finding all words, or from a visual
 
 ### Vim Exchange
 * `cx{motion}` ... and then `cx{motion}` - Exchange the motions.
+
+Useful commands: 
+* `:sort` - Sort lines
+* `:sort u` - Sort lines and remove duplicates
+* `:sort!` - Sort lines in reverse order
+* `noh` - Remove highlighting
