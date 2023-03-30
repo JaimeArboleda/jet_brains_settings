@@ -131,186 +131,190 @@ Plug 'dbakker/vim-paragraph-motion'
 Plug 'kana/vim-textobj-entire'
 
 " Most useful go to commands use g:
-nnoremap gt :action NextTab<CR>
+nmap gt <Action>(NextTab)
 let g:WhichKeyDesc_NextTab = "gt"
-nnoremap gT :action PreviousTab<CR>
+nmap gT <Action>(PreviousTab)
 let g:WhichKeyDesc_PrevTab = "gT"
-nnoremap gE :action GotoPreviousError<CR>
+nmap gE <Action>(GotoPreviousError)
 let g:WhichKeyDesc_errp = "gE"
-nnoremap ge :action GotoNextError<CR>
+nmap ge <Action>(GotoNextError)
 let g:WhichKeyDesc_errn = "ge"
-nnoremap gd :action GotoDeclaration<CR>
+nmap gd <Action>(GotoDeclaration)
 let g:WhichKeyDesc_decl = "gd"
-nnoremap gD :action GotoTypeDeclaration<CR>
-let g:WhichKeyDesc_tdecl = "gD"
-nnoremap gb :action Back<CR>
-let g:WhichKeyDesc_tdecl = "gb"
-nnoremap gf :action Forward<CR>
-let g:WhichKeyDesc_tdecl = "gf"
+nmap gD <Action>(GotoTypeDeclaration)
+let g:WhichKeyDesc_tdecla = "gD"
+nmap gb <Action>(Back)
+let g:WhichKeyDesc_tdeclaa = "gb"
+nmap gf <Action>(Forward)
+let g:WhichKeyDesc_tdeclaak = "gf"
 
 " Command Picker using <leader>
 let g:WhichKeyDesc_Window = "<leader>w Manage Windows"
-nnoremap <leader>ws :action SplitVertically<CR>
+nmap <leader>ws <Action>(SplitVertically)
 let g:WhichKeyDesc_Window_Split = "<leader>ws Split Vertically"
-nnoremap <leader>wu :action Unsplit<CR>
+nmap <leader>wu <Action>(Unsplit)
 let g:WhichKeyDesc_Window_Unsplit = "<leader>wu Unsplit"
-nnoremap <leader>wq :action CloseContent<CR>
+nmap <leader>wq <Action>(CloseContent)
 let g:WhichKeyDesc_Window_Close = "<leader>wq Close Buffer"
-nnoremap <leader>wh :action CloseAllToTheLeft<CR>
+nmap <leader>wh <Action>(CloseAllToTheLeft)
 let g:WhichKeyDesc_Window_Closeh = "<leader>wh Close All Tabs to left"
-nnoremap <leader>wl :action CloseAllToTheRight<CR>
+nmap <leader>wl <Action>(CloseAllToTheRight)
 let g:WhichKeyDesc_Window_Closel = "<leader>wl Close All Tabs to right"
-nnoremap <leader>wr :action ReopenClosedTab<CR>
+nmap <leader>wx <Action>(CloseAllEditorsButActive)
+let g:WhichKeyDesc_Window_Closex = "<leader>wx Close All Tabs but active"
+nmap <leader>wr <Action>(ReopenClosedTab)
 let g:WhichKeyDesc_Window_Reopen = "<leader>wr Reopen Last Closed Buffer"
 "nnoremap <leader>ww <c-w>w
 "let g:WhichKeyDesc_Window_Switch = "<leader>ww Switch Split"
-"nnoremap <leader>wt :action NextTab<CR>
+"map <leader>wt <Action>(NextTab)
 "let g:WhichKeyDesc_Window_NTab = "<leader>wt Next Tab"
-"nnoremap <leader>wp :action PreviousTab<CR>
+"map <leader>wp <Action>(PreviousTab)
 "let g:WhichKeyDesc_Window_PTab = "<leader>wp Previous Tab"
-nnoremap <leader>wc :action HideAllWindows<CR>
+nmap <leader>wc <Action>(HideAllWindows)
 let g:WhichKeyDesc_Window_Hide = "<leader>wc Hide All Windows"
 
 let g:WhichKeyDesc_Folding = "<leader>z Folding"
-nnoremap <leader>zc :action CollapseRegion<CR>
+nmap <leader>zc <Action>(CollapseRegion)
 let g:WhichKeyDesc_Folding_c = "<leader>zc Collapse Region"
-nnoremap <leader>ze :action ExpandRegion<CR>
+nmap <leader>ze <Action>(ExpandRegion)
 let g:WhichKeyDesc_Folding_e = "<leader>ze Expand Region"
-nnoremap <leader>zd :action CollapseAllRegions<CR>
+nmap <leader>zd <Action>(CollapseAllRegions)
 let g:WhichKeyDesc_Folding_C = "<leader>zd Collapse All Regions"
-nnoremap <leader>zf :action ExpandAllRegions<CR>
+nmap <leader>zf <Action>(ExpandAllRegions)
 let g:WhichKeyDesc_Folding_E = "<leader>zf Expand All Regions"
 
 let g:WhichKeyDesc_Terminal = "<leader>t Terminal and Run"
-nnoremap <leader>to :action Terminal.OpenInTerminal<CR>
+nmap <leader>to <Action>(Terminal)
 let g:WhichKeyDesc_Terminal_to = "<leader>to Open New Terminal in Path"
-nnoremap <leader>tt :action ActivateTerminalToolWindow<CR>
+nmap <leader>tt <Action>(ActivateTerminalToolWindow)
 let g:WhichKeyDesc_Terminal_tt = "<leader>tt Open Terminal"
-nnoremap <leader>tr :action ContextRun<CR>
+nmap <leader>tr <Action>(ContextRun)
 let g:WhichKeyDesc_Terminal_tr = "<leader>tr Context Run"
-nnoremap <leader>ts :action RunClass<CR>
+nmap <leader>ts <Action>(RunClass)
 let g:WhichKeyDesc_Terminal_ts = "<leader>ts Run Class"
-nnoremap <leader>tc :action RerunTests<CR>
+nmap <leader>tc <Action>(RerunTests)
 let g:WhichKeyDesc_Terminal_tc = "<leader>tc Run Tests"
-nnoremap <leader>tf :action RerunFailedTests<CR>
+nmap <leader>tf <Action>(RerunFailedTests)
 let g:WhichKeyDesc_Terminal_tf = "<leader>tf Run Failed Tests"
-nnoremap <leader>tp :action ChooseRunConfiguration<CR>
+nmap <leader>tp <Action>(ChooseRunConfiguration)
 let g:WhichKeyDesc_Terminal_tp = "<leader>tp Choose Run Configuration"
 
 let g:WhichKeyDesc_Ref = "<leader>r Refactorings"
-nnoremap <leader>rp :action Refactorings.QuickListPopupAction<CR>
+nmap <leader>rp <Action>(Refactorings)
 let g:WhichKeyDesc_Ref_p = "<leader>rp Refactor Popup"
-nnoremap <Leader>rf :action ReformatCode<CR>
+nmap <Leader>rf <Action>(ReformatCode)
 let g:WhichKeyDesc_Ref_f = "<leader>rf Reformat Code"
-nnoremap <Leader>rn :action RenameElement<CR>
+nmap <Leader>rn <Action>(RenameElement)
 let g:WhichKeyDesc_Ref_n = "<leader>rn Rename Element"
-nnoremap <leader>ra :action ShowIntentionActions<CR>
+nmap <leader>ra <Action>(ShowIntentionActions)
 let g:WhichKeyDesc_Ref_a = "<leader>ra Intention Actions"
-nnoremap <leader>rg :action Generate<CR>
+nmap <leader>rg <Action>(Generate)
 let g:WhichKeyDesc_Ref_g = "<leader>rg Generate"
 
 let g:WhichKeyDesc_Find = "<leader>f Find and Replace"
-nnoremap <leader>fr :action Replace<CR>
+nmap <leader>fr <Action>(Replace)
 let g:WhichKeyDesc_Find_rep = "<leader>fr Replace"
-nnoremap <leader>ff :action SearchEverywhere<CR>
+nmap <leader>ff <Action>(SearchEverywhere)
 let g:WhichKeyDesc_Find_find = "<leader>ff Search Everywhere"
+nmap <leader>fp <Action>(FindInPath)
+let g:WhichKeyDesc_Find_findp = "<leader>fp Find in Path"
 
 let g:WhichKeyDesc_vim = "<leader>v VIM"
-nnoremap <leader>vr :action IdeaVim.ReloadVimRc.reload<CR>
+nmap <leader>vr <Action>(IdeaVim)
 let g:WhichKeyDesc_vim_r = "<leader>vr Reload .ideavimrc"
 nnoremap <leader>ve :e C:/Users/jaime/.ideavimrc<CR>
 let g:WhichKeyDesc_vim_e = "<leader>ve Edit .ideavimrc"
 
 let g:WhichKeyDesc_Show = "<leader>s Show"
-nnoremap <leader>su :action FindUsages<CR>
+nmap <leader>su <Action>(FindUsages)
 let g:WhichKeyDesc_Show_us = "<leader>su Show Usages"
-nnoremap <leader>sl :action RecentLocations<CR>
+nmap <leader>sl <Action>(RecentLocations)
 let g:WhichKeyDesc_Show_lo = "<leader>sl Recent Locations"
-"nnoremap <leader>sr :action GotoRelated<CR>
+"map <leader>sr <Action>(GotoRelated)
 "let g:WhichKeyDesc_Show_rel = "<leader>sr Goto Related"
-nnoremap <leader>sd :action QuickJavaDoc<CR>
+nmap <leader>sd <Action>(QuickJavaDoc)
 let g:WhichKeyDesc_Show_doc = "<leader>sd Documentation"
-nnoremap <leader>se :action ShowErrorDescription<CR>
+nmap <leader>se <Action>(ShowErrorDescription)
 let g:WhichKeyDesc_Show_er = "<leader>se Error Description"
-nnoremap <leader>sa :action GotoAction<CR>
+nmap <leader>sa <Action>(GotoAction)
 let g:WhichKeyDesc_Show_ac = "<leader>sa Actions"
-nnoremap <leader>sf :action RecentFiles<CR>
+nmap <leader>sf <Action>(RecentFiles)
 let g:WhichKeyDesc_Show_fi = "<leader>sf Recent Files"
-nnoremap <leader>sc :action RecentChangedFiles<CR>
+nmap <leader>sc <Action>(RecentChangedFiles)
 let g:WhichKeyDesc_Show_sc = "<leader>sc Recent Changed Files"
 
 let g:WhichKeyDesc_Go = "<leader>g Go"
-nnoremap <leader>gb :action Back<CR>
+nmap <leader>gb <Action>(Back)
 let g:WhichKeyDesc_Go_b = "<leader>gb Go Back"
-nnoremap <leader>gc :action VcsShowPrevChangeMarker<CR>
+nmap <leader>gc <Action>(VcsShowPrevChangeMarker)
 let g:WhichKeyDesc_Go_c = "<leader>gc Go to Previous Git Change"
-nnoremap <leader>gd :action GotoDeclaration<CR>
+nmap <leader>gd <Action>(GotoDeclaration)
 let g:WhichKeyDesc_Go_d = "<leader>gd Go to Declaration"
-nnoremap <leader>ge :action JumpToLastChange<CR>
+nmap <leader>ge <Action>(JumpToLastChange)
 let g:WhichKeyDesc_Go_e = "<leader>ge Go to Last Change"
-nnoremap <leader>gf :action Forward<CR>
+nmap <leader>gf <Action>(Forward)
 let g:WhichKeyDesc_Go_f = "<leader>gf Go Forward"
-nnoremap <leader>gi :action GotoImplementation<CR>
+nmap <leader>gi <Action>(GotoImplementation)
 let g:WhichKeyDesc_Go_i = "<leader>gi Go to Implementation"
-nnoremap <leader>gj :action GotoClass<CR>
+nmap <leader>gj <Action>(GotoClass)
 let g:WhichKeyDesc_Go_j = "<leader>gj Go to Class"
-nnoremap <leader>gm :action MethodDown<CR>
+nmap <leader>gm <Action>(MethodDown)
 let g:WhichKeyDesc_Go_m = "<leader>gm Go to next method"
-nnoremap <leader>gn :action VcsShowNextChangeMarker<CR>
+nmap <leader>gn <Action>(VcsShowNextChangeMarker)
 let g:WhichKeyDesc_Go_n = "<leader>gn Go to Next Git Change"
-nnoremap <leader>gp :action GotToSuperMethod<CR>
+nmap <leader>gp <Action>(GotToSuperMethod)
 let g:WhichKeyDesc_Go_p = "<leader>gp Go to Super Method"
-nnoremap <leader>gt :action GotoTest<CR>
+nmap <leader>gt <Action>(GotoTest)
 let g:WhichKeyDesc_Go_t = "<leader>gt Go to Test"
-nnoremap <leader>gu :action MethodUp<CR>
+nmap <leader>gu <Action>(MethodUp)
 let g:WhichKeyDesc_Go_u = "<leader>gu Go to previous method"
-nnoremap <leader>gw :action GotoPreviousError<CR>
+nmap <leader>gw <Action>(GotoPreviousError)
 let g:WhichKeyDesc_Go_w = "<leader>gw Go to Previous Error"
-nnoremap <leader>gx :action GotoNextError<CR>
+nmap <leader>gx <Action>(GotoNextError)
 let g:WhichKeyDesc_Go_x = "<leader>gx Go to Next Error"
 
 let g:WhichKeyDesc_Bookmark = "<leader>b Bookmarks"
-nnoremap <leader>bt :action ToggleBookmark<CR>
+nmap <leader>bt <Action>(ToggleBookmark)
 let g:WhichKeyDesc_Bookmark_t = "<leader>bt Toggle Bookmark"
-nnoremap <leader>bs :action ShowBookmarks<CR>
+nmap <leader>bs <Action>(ShowBookmarks)
 let g:WhichKeyDesc_Bookmark_s = "<leader>bs Show Bookmarks"
 
 let g:WhichKeyDesc_Debug = "<leader>d Debug"
-nnoremap <leader>dc :action ChooseDebugConfiguration<CR>
+nmap <leader>dc <Action>(ChooseDebugConfiguration)
 let g:WhichKeyDesc_Debug_c = "<leader>dc Choose Debug Configuration"
-nnoremap <leader>dg :action Debug<CR>
+nmap <leader>dg <Action>(Debug)
 let g:WhichKeyDesc_Debug_g = "<leader>dg Debug"
-nnoremap <leader>dr :action Debugger.RemoveAllBreakpoints<CR>
+nmap <leader>dr <Action>(Debugger)
 let g:WhichKeyDesc_Debug_r = "<leader>dr Remove All Breakpoints"
-nnoremap <leader>ds :action Stop<CR>
+nmap <leader>ds <Action>(Stop)
 let g:WhichKeyDesc_Debug_s = "<leader>ds Stop"
-nnoremap <leader>dt :action ToggleLineBreakpoint<CR>
+nmap <leader>dt <Action>(ToggleLineBreakpoint)
 let g:WhichKeyDesc_Debug_t = "<leader>dt Toggle Line Breakpoint"
-nnoremap <leader>dv :action ViewBreakpoints<CR>
+nmap <leader>dv <Action>(ViewBreakpoints)
 let g:WhichKeyDesc_Debug_v = "<leader>dv View Breakpoints"
 
 let g:WhichKeyDesc_Git = "<leader>c Git"
-nnoremap <leader>ca :action Annotate<CR>
+nmap <leader>ca <Action>(Annotate)
 let g:WhichKeyDesc_Git_a = "<leader>ca Annotate"
-nnoremap <leader>cb :action Git.Branches<CR>
+nmap <leader>cb <Action>(Git)
 let g:WhichKeyDesc_Git_b = "<leader>cb Branches"
-nnoremap <leader>cc :action Git.ResolveConflicts<CR>
+nmap <leader>cc <Action>(Git)
 let g:WhichKeyDesc_Git_c = "<leader>cc Resolve Conflicts"
-nnoremap <leader>cl :action Vcs.Show.Log<CR>
+nmap <leader>cl <Action>(Vcs)
 let g:WhichKeyDesc_Git_l = "<leader>cl Show Log"
-nnoremap <leader>cm :action Git.Merge<CR>
+nmap <leader>cm <Action>(Git)
 let g:WhichKeyDesc_Git_m = "<leader>cm Merge"
-nnoremap <leader>co :action Github.Open.In.Browser<CR>
+nmap <leader>co <Action>(Github)
 let g:WhichKeyDesc_Git_o = "<leader>co Open in Browser"
-nnoremap <leader>cp :action Git.Pull<CR>
+nmap <leader>cp <Action>(Git)
 let g:WhichKeyDesc_Git_p = "<leader>cp Pull"
-nnoremap <leader>cr :action Git.Rebase<CR>
+nmap <leader>cr <Action>(Git)
 let g:WhichKeyDesc_Git_r = "<leader>cr Rebase"
-nnoremap <leader>cs :action Vcs.Show.Local.Changes<CR>
+nmap <leader>cs <Action>(Vcs)
 let g:WhichKeyDesc_Git_s = "<leader>cs Show Local Changes"
-nnoremap <leader>cu :action Git.Push<CR>
+nmap <leader>cu <Action>(Git)
 let g:WhichKeyDesc_Git_u = "<leader>cu Push"
-nnoremap <leader>cv :action Compare.LastVersion<CR>
+nmap <leader>cv <Action>(Compare)
 let g:WhichKeyDesc_Git_v = "<leader>cv Compare Last Version"
-nnoremap <leader>cw :action ActivateCommitToolWindow<CR>
+nmap <leader>cw <Action>(ActivateCommitToolWindow)
 let g:WhichKeyDesc_Git_w = "<leader>cw Commit Tool Window"
