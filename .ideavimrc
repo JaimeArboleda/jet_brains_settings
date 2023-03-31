@@ -10,6 +10,8 @@
 "" <NextTab> -> <a-l> // Useful for switching tabs in terminal
 "" <NextSplitter> -> <c-w> // Useful for switching windows
 "" <PrevSplitter> -> <c-W> // Useful for switching windows
+"" <EditorScrollDown> -> <c-J> // Useful for scrolling
+"" <EditorScrollUp> -> <c-K> // Useful for scrolling
 "" <copilot.openCopilot> -> <c-p>
 "" <copilot.requestCompletions> -> <c-[>
 "" <copilot.cycleNextInLays> -> <c-[>
@@ -184,7 +186,7 @@ nmap <leader>zf <Action>(ExpandAllRegions)
 let g:WhichKeyDesc_Folding_E = "<leader>zf Expand All Regions"
 
 let g:WhichKeyDesc_Terminal = "<leader>t Terminal and Run"
-nmap <leader>to <Action>(Terminal)
+nmap <leader>to <Action>(Terminal.OpenInTerminal)
 let g:WhichKeyDesc_Terminal_to = "<leader>to Open New Terminal in Path"
 nmap <leader>tt <Action>(ActivateTerminalToolWindow)
 let g:WhichKeyDesc_Terminal_tt = "<leader>tt Open Terminal"
@@ -200,7 +202,7 @@ nmap <leader>tp <Action>(ChooseRunConfiguration)
 let g:WhichKeyDesc_Terminal_tp = "<leader>tp Choose Run Configuration"
 
 let g:WhichKeyDesc_Ref = "<leader>r Refactorings"
-nmap <leader>rp <Action>(Refactorings)
+nmap <leader>rp <Action>(Refactorings.QuickListPopupAction)
 let g:WhichKeyDesc_Ref_p = "<leader>rp Refactor Popup"
 nmap <Leader>rf <Action>(ReformatCode)
 let g:WhichKeyDesc_Ref_f = "<leader>rf Reformat Code"
@@ -220,7 +222,7 @@ nmap <leader>fp <Action>(FindInPath)
 let g:WhichKeyDesc_Find_findp = "<leader>fp Find in Path"
 
 let g:WhichKeyDesc_vim = "<leader>v VIM"
-nmap <leader>vr <Action>(IdeaVim)
+nmap <leader>vr <Action>(IdeaVim.ReloadVimRc.reload)
 let g:WhichKeyDesc_vim_r = "<leader>vr Reload .ideavimrc"
 nnoremap <leader>ve :e C:/Users/jaime/.ideavimrc<CR>
 let g:WhichKeyDesc_vim_e = "<leader>ve Edit .ideavimrc"
@@ -279,12 +281,22 @@ let g:WhichKeyDesc_Bookmark_t = "<leader>bt Toggle Bookmark"
 nmap <leader>bs <Action>(ShowBookmarks)
 let g:WhichKeyDesc_Bookmark_s = "<leader>bs Show Bookmarks"
 
+let g:WhichKeyDesc_editor = "<leader>e Editor"
+nmap <leader>eh <Action>(EditorScrollLeft)
+let g:WhichKeyDesc_editorh = "<leader>eh Scroll Left"
+nmap <leader>ej <Action>(EditorScrollDown)
+let g:WhichKeyDesc_editorj = "<leader>ej Scroll Down"
+nmap <leader>ek <Action>(EditorScrollUp)
+let g:WhichKeyDesc_editork = "<leader>ek Scroll Up"
+nmap <leader>el <Action>(EditorScrollRight)
+let g:WhichKeyDesc_editorl = "<leader>el Scroll Right"
+
 let g:WhichKeyDesc_Debug = "<leader>d Debug"
 nmap <leader>dc <Action>(ChooseDebugConfiguration)
 let g:WhichKeyDesc_Debug_c = "<leader>dc Choose Debug Configuration"
 nmap <leader>dg <Action>(Debug)
 let g:WhichKeyDesc_Debug_g = "<leader>dg Debug"
-nmap <leader>dr <Action>(Debugger)
+nmap <leader>dr <Action>(Debugger.RemoveAllBreakpoints)
 let g:WhichKeyDesc_Debug_r = "<leader>dr Remove All Breakpoints"
 nmap <leader>ds <Action>(Stop)
 let g:WhichKeyDesc_Debug_s = "<leader>ds Stop"
@@ -296,25 +308,25 @@ let g:WhichKeyDesc_Debug_v = "<leader>dv View Breakpoints"
 let g:WhichKeyDesc_Git = "<leader>c Git"
 nmap <leader>ca <Action>(Annotate)
 let g:WhichKeyDesc_Git_a = "<leader>ca Annotate"
-nmap <leader>cb <Action>(Git)
+nmap <leader>cb <Action>(Git.Branches)
 let g:WhichKeyDesc_Git_b = "<leader>cb Branches"
-nmap <leader>cc <Action>(Git)
+nmap <leader>cc <Action>(Git.ResolveConflicts)
 let g:WhichKeyDesc_Git_c = "<leader>cc Resolve Conflicts"
-nmap <leader>cl <Action>(Vcs)
+nmap <leader>cl <Action>(Vcs.Show.Log)
 let g:WhichKeyDesc_Git_l = "<leader>cl Show Log"
-nmap <leader>cm <Action>(Git)
+nmap <leader>cm <Action>(Git.Merge)
 let g:WhichKeyDesc_Git_m = "<leader>cm Merge"
-nmap <leader>co <Action>(Github)
+nmap <leader>co <Action>(Github.Open.In.Browser)
 let g:WhichKeyDesc_Git_o = "<leader>co Open in Browser"
-nmap <leader>cp <Action>(Git)
+nmap <leader>cp <Action>(Git.Pull)
 let g:WhichKeyDesc_Git_p = "<leader>cp Pull"
-nmap <leader>cr <Action>(Git)
+nmap <leader>cr <Action>(Git.Rebase)
 let g:WhichKeyDesc_Git_r = "<leader>cr Rebase"
-nmap <leader>cs <Action>(Vcs)
+nmap <leader>cs <Action>(Vcs.Show.Local.Changes)
 let g:WhichKeyDesc_Git_s = "<leader>cs Show Local Changes"
-nmap <leader>cu <Action>(Git)
+nmap <leader>cu <Action>(Git.Push)
 let g:WhichKeyDesc_Git_u = "<leader>cu Push"
-nmap <leader>cv <Action>(Compare)
+nmap <leader>cv <Action>(Compare.LastVersion)
 let g:WhichKeyDesc_Git_v = "<leader>cv Compare Last Version"
 nmap <leader>cw <Action>(ActivateCommitToolWindow)
 let g:WhichKeyDesc_Git_w = "<leader>cw Commit Tool Window"
