@@ -13,9 +13,12 @@
 "" <EditorScrollDown> -> <c-J> // Useful for scrolling
 "" <EditorScrollUp> -> <c-K> // Useful for scrolling
 "" <copilot.openCopilot> -> <c-p>
+"" <copilot.toggleCopilot> -> <c-P>
 "" <copilot.requestCompletions> -> <c-[>
 "" <copilot.cycleNextInLays> -> <c-[>
 "" <copilot.cyclePrevInLays> -> <c-]>
+"" <notebook.openCellBelow> -> <c-o>
+"" <notebook.openCellAbove> -> <c-O>
 
 " Begin Vimrc
 set linenumber
